@@ -2,6 +2,8 @@ import uuid
 from datetime import datetime
 
 class BaseModel:
+    """ BaseModel takes care of the initialization, serialization and deserialization of all future instances
+    """
     def __init__(self):
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
