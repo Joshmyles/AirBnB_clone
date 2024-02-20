@@ -51,6 +51,11 @@ h4 {
     font-size: 14px;
 }
 .popover {
+    display: none;
+    color: #DDDDDD;
+}
+.popover:hover {
+    display: inline-block;
     color: #DDDDDD;
 }
 ul{
