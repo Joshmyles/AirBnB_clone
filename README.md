@@ -1,6 +1,6 @@
 # ALX AirBnB Clone Project - The Console
 
-![App Screenshot]9https://repository-images.githubusercontent.com/520063788/a91abf2d-82e3-40e6-96d7-75043c684ff3)
+![App Screenshot](https://repository-images.githubusercontent.com/520063788/a91abf2d-82e3-40e6-96d7-75043c684ff3)
 
 ## Description
 In this project, we are building the airbnb console.
