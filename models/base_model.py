@@ -5,18 +5,21 @@ Basemodel does initialiazation, serialization & deserialization of instances.
 """
 
 import uuid
-# import models
+# from models import storage
 from datetime import datetime
-from models.engine.file_storage import FileStorage
+# from models.engine.file_storage import FileStorage
 
-storage = FileStorage()
-storage.reload()
+# storage = FileStorage()
+# storage.reload()
 
 
 class BaseModel:
     """ BaseModel for all classes
     """
     def __init__(self, *args, **kwargs):
+        from models.engine.file_storage import FileStorage
+        storage = FileStorage()
+        storage.reload()
         """ Constructor """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
@@ -32,6 +35,9 @@ class BaseModel:
                 else:
                     setattr(self, key, value)
         else:
+            # from models.engine.file_storage import FileStorage
+            # storage = FileStorage()
+            # storage.reload()
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             storage.new(self)
@@ -41,6 +47,9 @@ class BaseModel:
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
+        from models.engine.file_storage import FileStorage
+        storage = FileStorage()
+        storage.reload()
         """ Save method, it updates the updated_at """
         self.updated_at = datetime.now()
         storage.save()

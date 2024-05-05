@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
             print("** Class doesn't exist **")
         elif len(args) == 1:
             print("** Instance ID missing **")
-        elif:
+        else:
             obj_key = args[0] + "." + args[1]
             objs = storage.all()
             if obj_key not in objs:

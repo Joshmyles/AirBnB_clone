@@ -1,13 +1,32 @@
 # models/engine/file_storage.py
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
     """ Class for serializing & deserializing instances """
+    CLASSES = {
+        'BaseModel': BaseModel,
+        'User': User,
+        'City': City,
+        'Amenity': Amenity,
+        'Place': Place,
+        'Review': Review
+        }
 
     __file_path = "file.json"
-    __objects = {} # dictionary to store all objects by <class name>.id
+    __objects = {}  # dictionary to store all objects by <class name>.id
+    
+    def __init__(self):
+        """ Initialization """
+        self._reloading = False
 
     def all(self):
         """ Returns the dictionary __objects """
@@ -29,11 +48,20 @@ class FileStorage:
 
     def reload(self):
         """ Deserialize JSON file to __objects """
+        if self._reloading:
+            return
+        self._reloading = True
         try:
             with open(self.__file_path, 'r') as file:
                 data = json.load(file)
                 for key, value in data.items():
                     class_name, obj_id = key.split('.')
-                    print(class_name, obj_id, value)
+                    cls = self.CLASSES[class_name]
+                    obj = cls(**value)
+                    self.__objects[key] = obj
         except FileNotFoundError:
             pass
+        except Exception as e:
+            print(f"Error reloading objects: {e}")
+        finally:
+            self._reloading = False
