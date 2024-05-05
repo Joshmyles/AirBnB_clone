@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+
+import sys
+sys.path.append("/home/josh/ALX/AirBnB_clone")
 from models import storage
 from models.base_model import BaseModel
+
 
 all_objs = storage.all()
 print("-- Reloaded objects --")

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import sys
+sys.path.append("/home/josh/ALX/AirBnB_clone")
 from models.base_model import BaseModel
 
 """test_base_model"""

@@ -1,20 +1,10 @@
 # models/engine/file_storage.py
 
 import json
-from models.amenity import Amenity
-from models.review import Review
 
 
 class FileStorage:
     """ Class for serializing & deserializing instances """
-    CLASSES = {
-            'BaseModel': BaseModel,
-            'User': User,
-            'City': City,
-            'Amenity': Amenity,
-            'Place': Place,
-            'Review': Review
-            }
 
     __file_path = "file.json"
     __objects = {} # dictionary to store all objects by <class name>.id

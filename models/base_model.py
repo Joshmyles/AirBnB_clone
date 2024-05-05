@@ -5,7 +5,7 @@ Basemodel does initialiazation, serialization & deserialization of instances.
 """
 
 import uuid
-import models
+# import models
 from datetime import datetime
 from models.engine.file_storage import FileStorage
 
@@ -27,7 +27,7 @@ class BaseModel:
                 if key == '__class__':
                     continue
                 elif key == 'created_at' or key == 'updated_at':
-                    d_val = datetime.strptime(value, '5Y-%m-%dT%H:%M:%S.%f')
+                    d_val = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
                     setattr(self, key, d_val)
                 else:
                     setattr(self, key, value)
@@ -48,7 +48,7 @@ class BaseModel:
     def to_dict(self):
         """ Returns the dictionary representation of an instance """
         obj_dict = self.__dict__.copy()
-        obj_dict['__class__'] = self.__class__.name__
+        obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
