@@ -1,6 +1,8 @@
 # models/engine/file_storage.py
 
 import json
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage:
@@ -9,7 +11,7 @@ class FileStorage:
             'BaseModel': BaseModel,
             'User': User,
             'City': City,
-            'Amenity' Amenity:,
+            'Amenity': Amenity,
             'Place': Place,
             'Review': Review
             }
