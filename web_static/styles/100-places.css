@@ -1,0 +1,146 @@
+.places {
+  padding-top: 20px;
+}
+.places div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.places > h1 {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  font-size: 30px;
+}
+article {
+  width: 390px;
+  height: max-content;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ff5a5f;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+article > div {
+  width: 100%;
+  display: flex;
+}
+article > div h2 {
+  font-size: 30px;
+  text-align: center;
+  padding-left: auto;
+  padding-right: auto;
+}
+article > div > div {
+  position: absolute;
+  justify-content: end;
+}
+.price_by_night {
+  color: #ff5a5f;
+  border: 4px solid #ff5a5f;
+  border-radius: 50%;
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  font-size: 30px;
+  align-items: center;
+}
+.information {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.max_guest {
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.number_rooms {
+  width: 100px;
+}
+.number_bathrooms {
+  width: 100px;
+}
+.user {
+  display: block;
+  justify-content: left !important;
+}
+.user > p {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.user > span {
+  font-weight: normal;
+}
+.places article {
+  display: block;
+}
+.amenities {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 40px;
+  font-size: 16px;
+  border-bottom: 1px solid #dddddd;
+  padding-left: 0px;
+}
+.amenities h2 {
+  margin-left: 0px;
+  font-size: 17px;
+  padding-left: 0px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+.amenities ul {
+  text-decoration: none;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.amenities ul li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+}
+.amenities img {
+  width: 25px;
+}
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 40px;
+  font-size: 16px;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+.reviews h2 {
+  font-size: 17px;
+  padding-left: 0px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+}
+.reviews div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style: none;
+  gap: 5px;
+}
+.reviews h3 {
+  font-size: 14px;
+}
+.reviews p {
+  font-size: 12px;
+}
